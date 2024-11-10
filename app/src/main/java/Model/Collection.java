@@ -33,6 +33,9 @@ public class Collection {
         return itemList;
     }
 
-
+    public String getListSize(){
+        int num = itemList.size();
+        return Integer.toString(num);
+    }
 
 }

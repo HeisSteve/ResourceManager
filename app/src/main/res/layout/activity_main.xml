@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,22 +8,24 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/Hometext"
+        android:id="@+id/HomeText"
         android:layout_width="162dp"
         android:layout_height="15dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="200dp"
-        android:text="Home Resource Manager"
+        android:text="Test"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id = "@+id/Collections"
-        android:layout_width="409dp"
-        android:layout_height="694dp"
+        android:id="@+id/Collections"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="36dp" />
+        tools:layout_editor_absoluteY="36dp"
+        android:layout_below="@+id/HomeText"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
