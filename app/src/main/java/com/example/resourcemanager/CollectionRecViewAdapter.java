@@ -1,9 +1,14 @@
 package com.example.resourcemanager;
 
+import static android.widget.Toast.*;
+
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,7 +21,9 @@ import Model.Collection;
 public class CollectionRecViewAdapter extends RecyclerView.Adapter<CollectionRecViewAdapter.ViewHolder>{
     private List<Collection> collectionList = new ArrayList<>();
 
-    public CollectionRecViewAdapter(){
+    private Context context;
+    public CollectionRecViewAdapter(Context context){
+        this.context = context;
     }
     @NonNull
     @Override
@@ -29,7 +36,15 @@ public class CollectionRecViewAdapter extends RecyclerView.Adapter<CollectionRec
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.collectionName.setText(collectionList.get(position).getName());
-        holder.NumItems.setText(collectionList.get(position).getListSize());
+        holder.NumItems.setText("Number of Items:" + collectionList.get(position).getListSize());
+        holder.parent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(context, "cliked", LENGTH_SHORT).show();
+            }
+
+        });
+
     }
 
     @Override
@@ -45,10 +60,13 @@ public class CollectionRecViewAdapter extends RecyclerView.Adapter<CollectionRec
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView collectionName;
         private TextView NumItems;
+
+        private RelativeLayout parent;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             collectionName = itemView.findViewById(R.id.CollectionName);
             NumItems = itemView.findViewById(R.id.NumItems);
+            parent = itemView.findViewById(R.id.parentCollection);
         }
     }
 }

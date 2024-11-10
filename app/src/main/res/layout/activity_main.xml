@@ -13,7 +13,7 @@
         android:layout_height="15dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="200dp"
-        android:text="Test"
+        android:text="Home Resources Manager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -26,6 +26,7 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="36dp"
         android:layout_below="@+id/HomeText"
+        android:layout_marginTop="10dp"
         />
 
 </RelativeLayout>

@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         homeResources.addCollection(CleaningProduct);
         homeResources.addCollection(food);
 
-        CollectionRecViewAdapter collectionAdapter = new CollectionRecViewAdapter();
+        CollectionRecViewAdapter collectionAdapter = new CollectionRecViewAdapter(this);
         collectionAdapter.setCollectionList(homeResources.getAllResources());
         assert collectionViews != null;
         collectionViews.setAdapter(collectionAdapter);
