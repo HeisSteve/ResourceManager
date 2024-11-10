@@ -3,6 +3,7 @@ package com.example.resourcemanager;
 import static android.widget.Toast.*;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,8 @@ public class CollectionRecViewAdapter extends RecyclerView.Adapter<CollectionRec
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "cliked", LENGTH_SHORT).show();
+                Intent intent = new Intent(context, Second_Activity.class);
+                context.startActivity(intent);
             }
 
         });

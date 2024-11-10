@@ -3,7 +3,7 @@ package Model;
 public class Item {
     private String name;
     private double price;
-    private double usage;
+    private int usage;
 
     public Item(String name, double price){
         this.name = name;
@@ -19,7 +19,7 @@ public class Item {
         this.price += price;
     }
 
-    public void changeUsage(double usage){
+    public void changeUsage(int usage){
         this.usage = usage;
     }
 
@@ -31,8 +31,8 @@ public class Item {
         return price;
     }
 
-    public double getUsage(){
-        return usage;
+    public int getUsage(){
+        return this.usage;
     }
 
 }
