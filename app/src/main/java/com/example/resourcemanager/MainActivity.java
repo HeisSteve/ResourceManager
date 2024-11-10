@@ -2,6 +2,10 @@ package com.example.resourcemanager;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,9 +13,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 
 import Model.Collection;
 import Model.HomeResources;
@@ -20,12 +22,19 @@ import Model.Item;
 public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-         RecyclerView collectionViews;
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);  // Only call this once
+
+        RecyclerView collectionViews;
         HomeResources homeResources;
 
-        super.onCreate(savedInstanceState);
+        // Initialize views
+        EditText etCollectionName = findViewById(R.id.etCollectionName); // EditText for input
+        Button btnAddCollection = findViewById(R.id.btnAddCollection);
+        Button btnSubmitCollection = findViewById(R.id.btnSubmitCollection);
+
+        // Setup edge-to-edge
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -39,28 +48,52 @@ public class MainActivity extends AppCompatActivity {
             Log.d("RecyclerView", "RecyclerView initialized successfully.");
         }
 
-        // Test
+        // Initialize HomeResources and populate with test data
         Collection food = new Collection("Food");
         food.addItem(new Item("Item 1", 100));
         food.addItem(new Item("Item 2", 100));
         food.addItem(new Item("Item 3", 100));
-        Collection CleaningProduct = new Collection("Clean product");
-        CleaningProduct.addItem(new Item("Item 1", 100));
-        CleaningProduct.addItem(new Item("Item 2", 100));
-        CleaningProduct.addItem(new Item("Item 3", 100));
+
+        Collection cleaningProduct = new Collection("Clean product");
+        cleaningProduct.addItem(new Item("Item 1", 100));
+        cleaningProduct.addItem(new Item("Item 2", 100));
+        cleaningProduct.addItem(new Item("Item 3", 100));
+
         homeResources = new HomeResources();
-        homeResources.addCollection(CleaningProduct);
+        homeResources.addCollection(cleaningProduct);
         homeResources.addCollection(food);
 
         CollectionRecViewAdapter collectionAdapter = new CollectionRecViewAdapter(this);
         collectionAdapter.setCollectionList(homeResources.getAllResources());
-        assert collectionViews != null;
         collectionViews.setAdapter(collectionAdapter);
-
 
         collectionViews.setLayoutManager(new GridLayoutManager(this, 2));
 
+        // Add New Collection button click handler
+        btnAddCollection.setOnClickListener(v -> {
+            // Show the EditText and Submit button
+            etCollectionName.setVisibility(View.VISIBLE);
+            btnSubmitCollection.setVisibility(View.VISIBLE);
+            btnAddCollection.setVisibility(View.GONE); // Hide the Add button
+        });
+
+        // Submit new collection after entering a name
+        btnSubmitCollection.setOnClickListener(v -> {
+            String collectionName = etCollectionName.getText().toString().trim(); // Get text from EditText
+
+            // Validate input
+            if (!collectionName.isEmpty()) {
+                Collection newCollection = new Collection(collectionName);
+                homeResources.addCollection(newCollection);
+                collectionAdapter.setCollectionList(homeResources.getAllResources());
+                collectionAdapter.notifyDataSetChanged(); // Update the RecyclerView
+                etCollectionName.setText(""); // Clear the input field after adding
+                etCollectionName.setVisibility(View.GONE); // Hide EditText
+                btnSubmitCollection.setVisibility(View.GONE); // Hide Submit button
+                btnAddCollection.setVisibility(View.VISIBLE); // Show Add button again
+            } else {
+                Toast.makeText(MainActivity.this, "Please enter a collection name.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
-
-
 }

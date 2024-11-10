@@ -23,10 +23,46 @@
         android:id="@+id/Collections"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="36dp"
         android:layout_below="@+id/HomeText"
         android:layout_marginTop="10dp"
         />
+
+    <!-- Add New Collection Button -->
+    <Button
+        android:id="@+id/btnAddCollection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="54dp"
+        android:text="Add new collection"
+        app:icon="@android:drawable/ic_menu_add" />
+
+    <!-- EditText to Enter Collection Name -->
+    <EditText
+        android:id="@+id/etCollectionName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/HomeText"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="Enter collection name"
+        android:visibility="gone"
+        android:padding="10dp"
+        android:background="@android:drawable/edit_text"/>
+
+    <!-- Submit New Collection Button -->
+    <Button
+        android:id="@+id/btnSubmitCollection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etCollectionName"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:text="Submit"
+        android:visibility="gone"  />
 
 </RelativeLayout>
