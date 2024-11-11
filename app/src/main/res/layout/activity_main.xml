@@ -18,14 +18,14 @@
         <!-- TextView inside CardView -->
         <TextView
             android:id="@+id/HomeText"
-            android:layout_width="wrap_content"
+            android:layout_width="255dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Home Resources Manager"
-            android:textSize="16sp"
-            android:textStyle="bold"
+            android:layout_marginLeft="90dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="16dp" />
+            android:text="Home Resources Manager"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </androidx.cardview.widget.CardView>
 

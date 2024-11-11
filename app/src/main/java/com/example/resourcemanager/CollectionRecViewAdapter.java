@@ -5,6 +5,7 @@ import static android.widget.Toast.*;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Parcelable;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -50,7 +51,6 @@ public class CollectionRecViewAdapter extends RecyclerView.Adapter<CollectionRec
                 intent.putParcelableArrayListExtra("Items", (ArrayList<? extends Parcelable>) currentCollection.getItems());
                 context.startActivity(intent);
             }
-
         });
 
     }
