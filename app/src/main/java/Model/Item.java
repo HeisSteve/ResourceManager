@@ -10,10 +10,10 @@ public class Item implements Parcelable {
     private double price;
     private int usage;
 
-    public Item(String name, double price){
+    public Item(String name, double price, int usage){
         this.name = name;
         this.price = price;
-        this.usage = 0;
+        this.usage = usage;
     }
 
     public void changeName(String name){

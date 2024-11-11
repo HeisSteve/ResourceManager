@@ -50,14 +50,14 @@ public class MainActivity extends AppCompatActivity {
 
         // Initialize HomeResources and populate with test data
         Collection food = new Collection("Food");
-        food.addItem(new Item("Item 1", 100));
-        food.addItem(new Item("Item 2", 100));
-        food.addItem(new Item("Item 3", 100));
+        food.addItem(new Item("Item 1", 100, 10));
+        food.addItem(new Item("Item 2", 100,10));
+        food.addItem(new Item("Item 3", 100,10));
 
         Collection cleaningProduct = new Collection("Clean product");
-        cleaningProduct.addItem(new Item("Item 1", 100));
-        cleaningProduct.addItem(new Item("Item 2", 100));
-        cleaningProduct.addItem(new Item("Item 3", 100));
+        cleaningProduct.addItem(new Item("Item 1", 100, 10));
+        cleaningProduct.addItem(new Item("Item 2", 100,10));
+        cleaningProduct.addItem(new Item("Item 3", 100,10));
 
         homeResources = new HomeResources();
         homeResources.addCollection(cleaningProduct);

@@ -1,12 +1,18 @@
 package com.example.resourcemanager;
 
+import static android.widget.Toast.LENGTH_SHORT;
+
 import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
+import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,9 +39,10 @@ public class ItemRecViewAdapder extends RecyclerView.Adapter<ItemRecViewAdapder.
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
+        Item item = itemList.get(position);
         holder.itemName.setText(itemList.get(position).getName());
         holder.price.setText("Price:" + itemList.get(position).getPrice());
-        holder.Usage.setText("Usage: " + itemList.get(position).getUsage());
+        holder.Usage.setText("Amount: " + itemList.get(position).getUsage());
     }
 
     @Override
@@ -54,6 +61,7 @@ public class ItemRecViewAdapder extends RecyclerView.Adapter<ItemRecViewAdapder.
         private TextView Usage;
 
         private RelativeLayout parent;
+
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             itemName = itemView.findViewById(R.id.Name);
