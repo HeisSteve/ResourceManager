@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -68,7 +69,7 @@ public class CollectionRecViewAdapter extends RecyclerView.Adapter<CollectionRec
         private TextView collectionName;
         private TextView NumItems;
 
-        private RelativeLayout parent;
+        private CardView parent;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             collectionName = itemView.findViewById(R.id.CollectionName);
