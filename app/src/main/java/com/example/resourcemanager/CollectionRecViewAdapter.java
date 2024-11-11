@@ -4,6 +4,7 @@ import static android.widget.Toast.*;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,7 @@ public class CollectionRecViewAdapter extends RecyclerView.Adapter<CollectionRec
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Collection currentCollection = collectionList.get(position);
         holder.collectionName.setText(collectionList.get(position).getName());
         holder.NumItems.setText("Number of Items:" + collectionList.get(position).getListSize());
         holder.parent.setOnClickListener(new View.OnClickListener() {
@@ -43,6 +45,7 @@ public class CollectionRecViewAdapter extends RecyclerView.Adapter<CollectionRec
             public void onClick(View v) {
                 Toast.makeText(context, "cliked", LENGTH_SHORT).show();
                 Intent intent = new Intent(context, MainActivity2.class);
+                intent.putParcelableArrayListExtra(currentCollection.getName(), (ArrayList<? extends Parcelable>) currentCollection.getItems());
                 context.startActivity(intent);
             }
 

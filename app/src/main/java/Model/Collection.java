@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Collection {
     private String name;
-    private List<Item> itemList;
+    private ArrayList<Item> itemList;
 
     public Collection(String name){
         this.name = name;
@@ -29,7 +29,7 @@ public class Collection {
         return name;
     }
 
-    public List<Item> getItems(){
+    public ArrayList<Item> getItems(){
         return itemList;
     }
 
