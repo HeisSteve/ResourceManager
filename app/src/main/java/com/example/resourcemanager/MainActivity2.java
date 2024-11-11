@@ -44,7 +44,7 @@ public class MainActivity2 extends AppCompatActivity {
         itemAdapter.setItemList(itemList);
         itemView.setAdapter(itemAdapter);
 
-        itemView.setLayoutManager(new GridLayoutManager(this, 2));
+        itemView.setLayoutManager(new GridLayoutManager(this, 1));
 
 
     }
