@@ -7,24 +7,71 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
-
     <TextView
         android:id="@+id/CollectionName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Collection Name:"
-        android:textSize = "20dp"
-        android:textStyle = "bold"
-        android:layout_marginTop="10dp"
-        />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:layout_below="@+id/CollectionName"
         android:id="@+id/Items"
         android:layout_marginTop="10dp"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_height="0dp" />
 
+    <Button
+        android:id="@+id/btnAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add new item"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="150dp"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/btnSubmitItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm new item"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_marginEnd="150dp"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone" />
+
+
+    <!-- EditText views for entering item details -->
+    <EditText
+        android:id="@+id/etItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Item Name"
+        android:layout_below="@id/CollectionName"
+        android:background="@android:drawable/edit_text"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/etItemPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Price"
+        android:layout_below="@id/etItemName"
+        android:background="@android:drawable/edit_text"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/etItemUsage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Usage"
+        android:layout_below="@id/etItemPrice"
+        android:background="@android:drawable/edit_text"
+        android:visibility="gone" />
 
 </RelativeLayout>
