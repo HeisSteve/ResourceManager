@@ -1,5 +1,6 @@
 package com.example.resourcemanager;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,10 @@ import Model.Item;
 public class ItemRecViewAdapder extends RecyclerView.Adapter<ItemRecViewAdapder.ItemViewHolder> {
 
     private List<Item> itemList = new ArrayList<>();
-
+    private Context context;
+    public ItemRecViewAdapder(Context context){
+        this.context = context;
+    }
     @NonNull
     @Override
     public ItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -37,6 +41,10 @@ public class ItemRecViewAdapder extends RecyclerView.Adapter<ItemRecViewAdapder.
     @Override
     public int getItemCount() {
         return itemList.size();
+    }
+
+    public void setItemList(List<Item> itemList){
+        this.itemList = itemList;
     }
 
     public class ItemViewHolder extends RecyclerView.ViewHolder{

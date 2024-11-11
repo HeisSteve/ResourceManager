@@ -1,12 +1,22 @@
 package com.example.resourcemanager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+
+import Model.Collection;
+import Model.HomeResources;
+import Model.Item;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -21,7 +31,20 @@ public class MainActivity2 extends AppCompatActivity {
             return insets;
         });
 
+        Intent intent = getIntent();
+        String collection_name = intent.getStringExtra("Collection Name");
+        ArrayList<Item> itemList = intent.getParcelableArrayListExtra("Items");
+        TextView collectionName = findViewById(R.id.CollectionName);
+        collectionName.setText("Collection Name: " + collection_name);
 
+        RecyclerView itemView;
+        itemView = findViewById(R.id.Items);
+
+        ItemRecViewAdapder itemAdapter = new ItemRecViewAdapder(this);
+        itemAdapter.setItemList(itemList);
+        itemView.setAdapter(itemAdapter);
+
+        itemView.setLayoutManager(new GridLayoutManager(this, 2));
 
 
     }

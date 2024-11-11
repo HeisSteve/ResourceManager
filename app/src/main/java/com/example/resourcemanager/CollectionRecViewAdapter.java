@@ -45,7 +45,8 @@ public class CollectionRecViewAdapter extends RecyclerView.Adapter<CollectionRec
             public void onClick(View v) {
                 Toast.makeText(context, "cliked", LENGTH_SHORT).show();
                 Intent intent = new Intent(context, MainActivity2.class);
-                intent.putParcelableArrayListExtra(currentCollection.getName(), (ArrayList<? extends Parcelable>) currentCollection.getItems());
+                intent.putExtra("Collection Name", currentCollection.getName());
+                intent.putParcelableArrayListExtra("Items", (ArrayList<? extends Parcelable>) currentCollection.getItems());
                 context.startActivity(intent);
             }
 

@@ -33,7 +33,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/UsageText"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="348dp"
-        android:progress="50" />
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="224dp"
+        android:progress="50"
+        android:outlineAmbientShadowColor="@color/black"
+        android:visibility="visible"/>
 </RelativeLayout>
