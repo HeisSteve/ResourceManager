@@ -42,7 +42,7 @@ public class CollectionRecViewAdapter extends RecyclerView.Adapter<CollectionRec
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "cliked", LENGTH_SHORT).show();
-                Intent intent = new Intent(context, Second_Activity.class);
+                Intent intent = new Intent(context, MainActivity2.class);
                 context.startActivity(intent);
             }
 
