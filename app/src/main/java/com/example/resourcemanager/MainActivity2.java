@@ -49,7 +49,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         // Set up RecyclerView
         RecyclerView itemView = findViewById(R.id.Items);
-        itemAdapter = new ItemRecViewAdapder(this);
+        itemAdapter = new ItemRecViewAdapder(MainActivity2.this);
         itemAdapter.setItemList(itemList);
         itemView.setAdapter(itemAdapter);
         itemView.setLayoutManager(new GridLayoutManager(this, 2));

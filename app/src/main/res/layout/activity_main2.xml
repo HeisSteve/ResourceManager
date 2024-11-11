@@ -70,7 +70,7 @@
         android:id="@+id/etItemUsage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Usage"
+        android:hint="Amount"
         android:layout_below="@id/etItemPrice"
         android:background="@android:drawable/edit_text"
         android:visibility="gone" />

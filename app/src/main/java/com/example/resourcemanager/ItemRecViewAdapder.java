@@ -39,7 +39,7 @@ public class ItemRecViewAdapder extends RecyclerView.Adapter<ItemRecViewAdapder.
 
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
-        Item item = itemList.get(position);
+        Item currentitem = itemList.get(position);
         holder.itemName.setText(itemList.get(position).getName());
         holder.price.setText("Price:" + itemList.get(position).getPrice());
         holder.Usage.setText("Amount: " + itemList.get(position).getUsage());
@@ -60,14 +60,14 @@ public class ItemRecViewAdapder extends RecyclerView.Adapter<ItemRecViewAdapder.
 
         private TextView Usage;
 
-        private RelativeLayout parent;
+        private RelativeLayout parent2;
 
         public ItemViewHolder(@NonNull View itemView) {
             super(itemView);
             itemName = itemView.findViewById(R.id.Name);
             price = itemView.findViewById(R.id.Price);
             Usage = itemView.findViewById(R.id.Usage);
-            parent= itemView.findViewById(R.id.main);
+            parent2= itemView.findViewById(R.id.main);
 
         }
     }
