@@ -35,7 +35,7 @@ public class ItemRecViewAdapder extends RecyclerView.Adapter<ItemRecViewAdapder.
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
         holder.itemName.setText(itemList.get(position).getName());
         holder.price.setText("Price:" + itemList.get(position).getPrice());
-        holder.Usage.setProgress(itemList.get(position).getUsage());
+        holder.Usage.setText("Usage: " + itemList.get(position).getUsage());
     }
 
     @Override
@@ -51,7 +51,7 @@ public class ItemRecViewAdapder extends RecyclerView.Adapter<ItemRecViewAdapder.
         private TextView itemName;
         private TextView price;
 
-        private ProgressBar Usage;
+        private TextView Usage;
 
         private RelativeLayout parent;
         public ItemViewHolder(@NonNull View itemView) {

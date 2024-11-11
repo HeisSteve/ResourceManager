@@ -42,23 +42,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Usage:"
-        android:id="@+id/UsageText"
+        android:id="@+id/Usage"
         android:layout_marginLeft="50dp"
         android:layout_toRightOf="@+id/Name"/>
 
-    <ProgressBar
-        android:id="@+id/Usage"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/UsageText"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="210dp"
-        android:progress="50"
-        android:outlineAmbientShadowColor="@color/black"
-        android:layout_alignBottom="@+id/UsageText"
-        android:visibility="visible"/>
+<!--    <ProgressBar-->
+<!--        android:id="@+id/Usage"-->
+<!--        style="?android:attr/progressBarStyleHorizontal"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/UsageText"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginTop="8dp"-->
+<!--        android:layout_marginEnd="210dp"-->
+<!--        android:progress="50"-->
+<!--        android:outlineAmbientShadowColor="@color/black"-->
+<!--        android:layout_alignBottom="@+id/UsageText"-->
+<!--        android:visibility="visible"/>-->
 
 </RelativeLayout>
 
