@@ -43,7 +43,8 @@
         android:layout_height="wrap_content"
         android:text="Usage:"
         android:id="@+id/Usage"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="42dp"
+
         android:layout_toRightOf="@+id/Name"
         android:paddingTop="10dp"/>
 
